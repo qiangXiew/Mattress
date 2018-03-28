@@ -3,15 +3,11 @@ import Header from './components/header';
 import Footer from './components/footer';
 // 主页
 import Home from './page/home/App';
+// 关于我们
+import About from './page/aboutus/App';
 // 联系我们
 import ContactUs from './page/contactUs/App';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-
-const About = () => (
-    <div>
-        <h2>About</h2>
-    </div>
-);
 
 const BasicExample = () => (
     <Router>
