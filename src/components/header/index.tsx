@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Menu, Icon, Col } from 'antd';
 import './header.less';
+const image = require('../../assets/headerLogo.png');
 
 class Header extends React.Component {
     render() {
@@ -10,7 +11,7 @@ class Header extends React.Component {
                     <div className="content">
                         <Col span={12}>
                             <a href="http://www.hong5.com.cn" rel="nofollow">
-                                <img src={require('../../assets/headerLogo.png')} />
+                                <img src={image} />
                             </a>
                         </Col>
                         <Col className="mobile" span={9} offset={3}><Icon type="phone" />4009-010-388</Col>

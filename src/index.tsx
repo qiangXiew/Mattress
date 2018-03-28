@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './page/home/App';
+import App from './page/aboutus/App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.less';
 
