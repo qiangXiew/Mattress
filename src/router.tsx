@@ -9,14 +9,6 @@ import About from './page/aboutus/App';
 import ContactUs from './page/contactUs/App';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-<<<<<<< HEAD
-const About = () => (
-    <div>
-        <h2>About</h2>
-    </div>
-);
-=======
->>>>>>> origin/master
 const BasicExample = () => (
     <Router>
         <div>
