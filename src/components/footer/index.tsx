@@ -41,9 +41,8 @@ class Footer extends React.Component {
             <Row>合作店铺</Row>
             <Row>招聘信息</Row>
           </Col>
-
-          {/* <Row className="footerDown">Copyright © 2016 红舞联盟 版权所有 京ICP备15050543-1</Row> */}
         </div>
+        <Col md={24} className="copyright">Copyright © 2016 红舞联盟 版权所有 京ICP备15050543-1</Col>
       </div>
     );
   }

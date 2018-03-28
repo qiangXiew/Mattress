@@ -12,7 +12,6 @@ const About = () => (
         <h2>About</h2>
     </div>
 );
-
 const BasicExample = () => (
     <Router>
         <div>
