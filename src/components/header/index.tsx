@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Menu, Icon, Col, Row } from 'antd';
 import './header.less';
+const image = require('../../assets/headerLogo.png');
 
 class Header extends React.Component {
     render() {
