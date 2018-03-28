@@ -1,8 +1,15 @@
 import * as React from 'react';
 import { Menu, Icon, Col, Row } from 'antd';
+import { Link } from 'react-router-dom';
 import './header.less';
 
-class Header extends React.Component {
+class Header extends React.Component<any, any> {
+    constructor(props: any) {
+        super(props);
+        this.state = {
+            defalutkeys: '/'
+        };
+    }
     render() {
         return (
             <div id="header">
@@ -19,15 +26,15 @@ class Header extends React.Component {
                     </Row>
                 </div>
                 <Row type="flex" justify="center">
-                    <Menu className="menu content" theme="light" mode="horizontal" defaultSelectedKeys={['index']} >
-                        <Menu.Item key="index"><a href="./">首页</a></Menu.Item>
-                        <Menu.Item key="about"><a href="./about">关于我们</a></Menu.Item>
-                        <Menu.Item key="product"><a href="./product">产品中心</a></Menu.Item>
-                        <Menu.SubMenu key="news" title="新闻中心">
-                            <Menu.Item><a href="./news">新闻类1</a></Menu.Item>
-                            <Menu.Item><a href="./news">新闻类2</a></Menu.Item>
+                    <Menu className="menu content" theme="light" mode="horizontal" defaultSelectedKeys={[window.location.pathname]} >
+                        <Menu.Item key="/"><Link to="/">首页</Link></Menu.Item>
+                        <Menu.Item key="/about"><Link to="/about">关于我们</Link></Menu.Item>
+                        <Menu.Item key="/product"><Link to="/product">产品中心</Link></Menu.Item>
+                        <Menu.SubMenu key="/news" title="新闻中心">
+                            <Menu.Item><Link to="/news">新闻类1</Link></Menu.Item>
+                            <Menu.Item><Link to="/news">新闻类2</Link></Menu.Item>
                         </Menu.SubMenu>
-                        <Menu.Item key="contactUs"><a href="./contactUs">联系我们</a></Menu.Item>
+                        <Menu.Item key="/contactUs"><Link to="/contactUs">联系我们</Link></Menu.Item>
                     </Menu>
                 </Row>
             </div>
