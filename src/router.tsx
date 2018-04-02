@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { BackTop } from 'antd';
 import Header from './components/header';
 import Footer from './components/footer';
 // 主页
@@ -24,6 +25,7 @@ const BasicExample = () => (
                 <Route path="/contactUs" component={ContactUs} />
                 
             <Footer/>
+            <BackTop />
         </div>
     </Router>
 );
