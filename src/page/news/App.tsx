@@ -26,9 +26,19 @@ class News extends React.Component {
                     <em>2018-03-19</em>
                   </div>
                 </div>
-                <Pagination defaultCurrent={2} total={50} />
+                <Pagination defaultCurrent={1} total={1} />
               </TabPane>
-              <TabPane tab="健康睡眠" key="2">11</TabPane>
+              <TabPane tab="健康睡眠" key="2">
+                <div className="news-list">
+                  <div className="news-list-img"><img src="" alt=""/></div>
+                  <div className="news-list-txt">
+                    <h3>睡眠不足会变傻！如果你有这6个症状，赶紧躺下睡觉</h3>
+                    <p>新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容。</p>
+                    <em>2018-03-19</em>
+                  </div>
+                </div>
+                <Pagination defaultCurrent={1} total={1} />
+              </TabPane>
             </Tabs>
           </div>
       </div>
