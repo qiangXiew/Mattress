@@ -24,7 +24,7 @@ class App extends React.Component<any, any> {
   render() {
 
     return (
-      <div id="tab_function" className="content" >
+      <div id="tab_recommend" className="content" >
         <Col span={6} className="fun_bar" >
           <Row className="da1" onMouseOver={this.isGoto.bind(this, 0)} >
             <p className="title" >亚磁热疗养生床垫</p>
