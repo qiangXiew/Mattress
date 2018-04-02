@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { BackTop } from 'antd';
 import Header from './components/header';
 import Footer from './components/footer';
 // 主页
@@ -14,14 +15,15 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 const BasicExample = () => (
     <Router>
         <div>
-            <Header/>
-                <Route exact={true} path="/" component={Home} />
-                <Route path="/about" component={About} />
-                <Route path="/product" component={About} />
-                <Route path="/news" component={News} />
-                <Route path="/contactUs" component={ContactUs} />
-                
-            <Footer/>
+            <Header />
+            <Route exact={true} path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/product" component={About} />
+            <Route path="/news" component={News} />
+            <Route path="/contactUs" component={ContactUs} />
+
+            <Footer />
+            <BackTop />
         </div>
     </Router>
 );
