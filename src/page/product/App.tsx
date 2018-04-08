@@ -16,7 +16,6 @@ class ProductTab extends React.Component<any, any> {
   }
   tab = (index: number) => {
     return this.state.current === index ? 'active' : '';
-
   }
   render() {
     return (
@@ -38,18 +37,13 @@ class ProductTab extends React.Component<any, any> {
 class TabComponent extends React.Component <any, any> {
   constructor(props: any) {
       super(props);
-      this.state = {
-
-      };
   }
-
   render() {
-      return (
-          <ProductTab>
-            <div className="亚磁热疗养生床垫"/>
-            <div className="3D气压全位按摩椅"/>
-          </ProductTab>
-      );
+    return (
+      <ProductTab>
+        <div/><div/>
+      </ProductTab>
+    );
   }
 }
 export default TabComponent;
