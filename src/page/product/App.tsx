@@ -2,29 +2,54 @@ import * as React from 'react';
 import './product.less';
 import Products from '../../components/products';
 
-class ProductTab extends React.Component {
+class ProductTab extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
-    this.state = {background: '', color: ''};
+    this.state = { 
+      tabs: [
+        {tabName: '亚磁热疗养生床垫', id: '1'},
+        {tabName: '3D气压全位按摩椅', id: '2'}
+      ],
+      current: 0
+    };
     this.tab = this.tab.bind(this);
   }
-  tab() {
-    console.log(this.state);
-    this.setState({
-      background: '#C30D23', color: '#fff'
-    });
+  tab = (index: number) => {
+    return this.state.current === index ? 'active' : '';
+
   }
   render() {
-    const style = this.state;
     return (
       <div className="product">
         <div className="pro-tab">
-          <p onClick={this.tab} style={style}>亚磁热疗养生床垫</p>
-          <p>3D气压全位按摩椅</p>
+        {
+          React.Children.map(this.props.children, (element, index) => {
+            return (
+              <p onClick={() => {this.setState({ current: index }); }} className={this.tab (index)}>{this.state.tabs[index].tabName}</p>
+            );
+          })
+        }
         </div>
         <Products />
       </div>
     );
   }
 }
-export default ProductTab;
+class TabComponent extends React.Component <any, any> {
+  constructor(props: any) {
+      super(props);
+      this.state = {
+
+      };
+  }
+
+  render() {
+      return (
+          <ProductTab>
+            <div className="亚磁热疗养生床垫"/>
+            <div className="3D气压全位按摩椅"/>
+          </ProductTab>
+      );
+  }
+}
+export default TabComponent;
