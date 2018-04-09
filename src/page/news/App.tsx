@@ -15,7 +15,7 @@ class News extends React.Component<any, any> {
     this.state = {newsdata: [], tabId: 0, total: 0};
     this.callback = this.callback.bind(this);
   }
-  componentWillMount () {
+  componentDidMount () {
     this.newsRes();
   }
   callback(key: string) {

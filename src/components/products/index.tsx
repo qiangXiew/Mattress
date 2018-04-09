@@ -4,7 +4,7 @@ import { Carousel, Tabs } from 'antd';
 // import axios from 'axios';
 import webApi from '../../lib/webApi';
 const TabPane = Tabs.TabPane;
-function callback(key: string) {
+function callback(key: any) {
   console.log(key);
 }
 
@@ -20,10 +20,11 @@ class Products extends React.Component <any, any> {
         {tabName: '产品功能', id: 1},
         {tabName: '产品特点', id: 2}
       ],
-      current: 0
+      current: 0,
+      tabId: 0
     };
   }
-  componentWillMount() {
+  componentDidMount() {
     this.publicRes();
   }
   async publicRes() {
@@ -31,8 +32,7 @@ class Products extends React.Component <any, any> {
     console.log(publicCon.data.data.bannerImgs);
     console.log(this);
     this.setState({
-      bannerImgs: publicCon.data.data.bannerImgs,
-      current: 1
+      bannerImgs: publicCon.data.data.bannerImgs
     });
     console.log(this.state);
   }
@@ -54,12 +54,11 @@ class Products extends React.Component <any, any> {
     console.log(tabId);
     let banner = (tabId === 0 ? this.state.bannerImgs.banner1 : this.state.bannerImgs.banner2); // banner数组赋值
     // banner遍历
-    console.log(banner);
     let bannerList = banner ? banner.map((el: any, index: number) => {
       return (
         <div key={index}><img src={banner[index].imgUrl} alt=""/></div>
       );
-    }) : ' ';
+    }) : null;
     let tab = this.state.tabs; // 产品tab
     // 产品tab遍历
     let tabBar = tab.map((el: any, index: number) => {
@@ -80,11 +79,11 @@ class Products extends React.Component <any, any> {
           {tabBar}
           </div>
           <Tabs defaultActiveKey="1" onChange={callback}>
-              <TabPane tab="磁源力" key="1"><h2>磁源力</h2><p>磁源力</p></TabPane>
-              <TabPane tab="远红外" key="2"><h2>远红外</h2><p>远红外</p></TabPane>
-              <TabPane tab="负离子" key="3"><h2>负离子</h2><p>负离子</p></TabPane>
-              <TabPane tab="超长波" key="4"><h2>磁源力</h2><p>磁源力</p></TabPane>
-            </Tabs>
+            <TabPane tab="磁源力" key="1"><h2>磁源力</h2><p>磁源力</p></TabPane>
+            <TabPane tab="远红外" key="2"><h2>远红外</h2><p>远红外</p></TabPane>
+            <TabPane tab="负离子" key="3"><h2>负离子</h2><p>负离子</p></TabPane>
+            <TabPane tab="超长波" key="4"><h2>超长波</h2><p>超长波</p></TabPane>
+          </Tabs>
         </div>
       </div>
     );

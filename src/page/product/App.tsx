@@ -18,32 +18,20 @@ class ProductTab extends React.Component<any, any> {
     return this.state.tabId === index ? 'active' : '';
   }
   render() {
+    const tabs = this.state.tabs;
+    let tab = tabs.map((el: any, index: number) => {
+      return (
+        <p key={index} onClick={() => {this.setState({ tabId: index }); }} className={this.tab (index)}>{tabs[index].tabName}</p>        
+      );
+    });
     return (
       <div className="product">
         <div className="pro-tab">
-        {
-          React.Children.map(this.props.children, (element, index) => {
-            return (
-              <p onClick={() => {this.setState({ tabId: index }); }} className={this.tab (index)}>{this.state.tabs[index].tabName}</p>
-            );
-          })
-        }
+        {tab}
         </div>
         <Products id={this.state.tabId}/>
       </div>
     );
   }
 }
-class TabComponent extends React.Component <any, any> {
-  constructor(props: any) {
-      super(props);
-  }
-  render() {
-    return (
-      <ProductTab>
-        <div/><div/>
-      </ProductTab>
-    );
-  }
-}
-export default TabComponent;
+export default ProductTab;
