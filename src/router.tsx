@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { BackTop } from 'antd';
+import { BackTop, Icon } from 'antd';
 import Header from './components/header';
 import Footer from './components/footer';
+import './index.less';
 // 主页
 import Home from './page/home/App';
 // 关于我们
@@ -17,15 +18,22 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 const BasicExample = () => (
     <Router>
         <div>
-            <Header/>
-                <Route exact={true} path="/" component={Home} />
-                <Route path="/about" component={About} />
-                <Route path="/product" component={Product} />
-                <Route path="/news" component={News} />
-                <Route path="/contactUs" component={ContactUs} />
-                
-            <Footer/>
-            <BackTop />
+            <Header />
+            <Route exact={true} path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/product" component={Product} />
+            <Route path="/news" component={News} />
+            <Route path="/contactUs" component={ContactUs} />
+
+            <Footer />
+            <div id="backTop">
+                <span><Icon type="phone" /></span>
+                <span><Icon type="wechat" /></span>
+                <span><Icon type="qq" /></span>
+                <span><Icon type="weibo" /></span>
+                <span><Icon type="message" /></span>
+                <BackTop />
+            </div>
         </div>
     </Router>
 );
