@@ -1,6 +1,30 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  
+@bar_right: 30px;
+#backTop{
+  position: fixed;
+  width: 40px;
+  right: @bar_right;
+  bottom: 90px;
+  height: 200px;
+  // background-color: rgba(0, 0, 0, 0.45);
+  background-color: rgba(255, 255, 255, 1);
+  text-align: center;
+  >span{
+    display: inline-block;
+    width: 100%;
+    font-size: 25px;
+    height: 40px;
+    color: #999;
+    
+  }
+  >span:hover{
+    background-color:#C30D23;
+    color: #fff;
+  }
+  .ant-back-top{
+    right: @bar_right;
+    .ant-back-top-content{
+      border-radius: 0;
+      color: #999;
+    }
+  }
 }
