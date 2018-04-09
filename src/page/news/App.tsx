@@ -1,35 +1,48 @@
 import * as React from 'react';
 import './news.less';
 import { Tabs , Pagination } from 'antd';
-import axios from 'axios';
 import * as moment from 'moment';
+import webAPI from '../../lib/webApi';
 const TabPane = Tabs.TabPane;
 
-function callback(key: string) {
-  console.log(key);
-}
+// function callback(key: string) {
+//   console.log(key);
+// }
 
 class News extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
-    this.state = {newsdata: []};
+    this.state = {newsdata: [], tabId: 0, total: 0};
+    this.callback = this.callback.bind(this);
   }
   componentWillMount () {
-    axios.get('http://192.168.0.50:8081/H5Website/findNewsPage', {params: {
-      token: '175413eab1288558',
-      tabId: 1
-    }}).then(res => {
-      console.log(res.data);
-      this.setState({
-        newsdata: res.data
-      });
-    }).catch(
-
-    );
+    this.newsRes();
   }
+  // callback(num: number) {
+  //   this.setState({
+  //     tabId: num
+  //   })
+  // }
+  callback(key: string) {
+    console.log(this);
+    this.setState({
+      tabId: key
+    });
+  }
+
+  async newsRes() {
+    let parth = {
+      tabId: this.state.tabId
+    };
+    let res = await webAPI.enroll.news(parth);
+    this.setState({
+      newsdata: res.data.data,
+      total: res.data.data.length
+    });
+  }  
   render() {
     const con = this.state.newsdata;
-    console.log(con);
+    console.log(this.state.tabId);
     let newsList = con.map((el: any, index: number) => {
       return (
         <div className="news-list" key={index}>
@@ -48,22 +61,15 @@ class News extends React.Component<any, any> {
             <img src="" alt=""/>
           </div>
           <div className="aboutusTab">
-            <Tabs defaultActiveKey="1" onChange={callback}>
+            <Tabs defaultActiveKey="1" onChange={this.callback}>
               <TabPane tab="公司新闻" key="1">
                 {newsList}
-                <Pagination defaultCurrent={1} total={1} />
+                <Pagination defaultCurrent={1} total={this.state.total} />
               </TabPane>
-              {/* <TabPane tab="健康睡眠" key="2">
-                <div className="news-list">
-                  <div className="news-list-img"><img src="" alt=""/></div>
-                  <div className="news-list-txt">
-                    <h3>睡眠不足会变傻！如果你有这6个症状，赶紧躺下睡觉</h3>
-                    <p>新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容。</p>
-                    <em>2018-03-19</em>
-                  </div>
-                </div>
-                <Pagination defaultCurrent={1} total={1} />
-              </TabPane> */}
+              <TabPane tab="健康睡眠" key="2">
+                {newsList}
+                <Pagination defaultCurrent={1} total={this.state.total} />
+              </TabPane>
             </Tabs>
           </div>
       </div>
