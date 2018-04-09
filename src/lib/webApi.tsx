@@ -18,6 +18,7 @@ class WebApi {
         let ress = await axios(patch)
             .then((res: any) => {
                 console.log(res, 'res');
+                return res;
             })
             .catch((err: any) => {
                 console.log(err, 'error');
@@ -27,7 +28,7 @@ class WebApi {
     }
 
     _getApi() {
-        this.enroll.news = (data: any) => { this._ApiRes(Config.news, data, {}); };
+        this.enroll.news = (data: any) => this._ApiRes(Config.news, data, {});
     }
 
 }
