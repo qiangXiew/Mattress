@@ -10,12 +10,12 @@ class ProductTab extends React.Component<any, any> {
         {tabName: '亚磁热疗养生床垫', id: '1'},
         {tabName: '3D气压全位按摩椅', id: '2'}
       ],
-      current: 0
+      tabId: 0
     };
     this.tab = this.tab.bind(this);
   }
   tab = (index: number) => {
-    return this.state.current === index ? 'active' : '';
+    return this.state.tabId === index ? 'active' : '';
   }
   render() {
     return (
@@ -24,12 +24,12 @@ class ProductTab extends React.Component<any, any> {
         {
           React.Children.map(this.props.children, (element, index) => {
             return (
-              <p onClick={() => {this.setState({ current: index }); }} className={this.tab (index)}>{this.state.tabs[index].tabName}</p>
+              <p onClick={() => {this.setState({ tabId: index }); }} className={this.tab (index)}>{this.state.tabs[index].tabName}</p>
             );
           })
         }
         </div>
-        <Products />
+        <Products id={this.state.tabId}/>
       </div>
     );
   }

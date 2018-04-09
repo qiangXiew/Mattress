@@ -18,11 +18,6 @@ class News extends React.Component<any, any> {
   componentWillMount () {
     this.newsRes();
   }
-  // callback(num: number) {
-  //   this.setState({
-  //     tabId: num
-  //   })
-  // }
   callback(key: string) {
     console.log(this);
     this.setState({
@@ -35,14 +30,16 @@ class News extends React.Component<any, any> {
       tabId: this.state.tabId
     };
     let res = await webAPI.enroll.news(parth);
+    console.log(res.data.data);
     this.setState({
       newsdata: res.data.data,
       total: res.data.data.length
     });
+    console.log(this.state);
   }  
   render() {
     const con = this.state.newsdata;
-    console.log(this.state.tabId);
+    console.log(con);
     let newsList = con.map((el: any, index: number) => {
       return (
         <div className="news-list" key={index}>

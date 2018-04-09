@@ -1,6 +1,8 @@
 import * as React from 'react';
 import './product.less';
 import { Carousel, Tabs } from 'antd';
+// import axios from 'axios';
+import webApi from '../../lib/webApi';
 const TabPane = Tabs.TabPane;
 function callback(key: string) {
   console.log(key);
@@ -13,6 +15,7 @@ class Products extends React.Component <any, any> {
     this.prev = this.prev.bind(this);
     this.next = this.next.bind(this);
     this.state = {
+      bannerImgs: {},
       tabs: [
         {tabName: '产品功能', id: 1},
         {tabName: '产品特点', id: 2}
@@ -20,36 +23,61 @@ class Products extends React.Component <any, any> {
       current: 0
     };
   }
+  componentWillMount() {
+    this.publicRes();
+  }
+  async publicRes() {
+    let publicCon = await webApi.enroll.product();
+    console.log(publicCon.data.data.bannerImgs);
+    console.log(this);
+    this.setState({
+      bannerImgs: publicCon.data.data.bannerImgs,
+      current: 1
+    });
+    console.log(this.state);
+  }
+  // banner前一张
   prev() {
     this.myRef.prev();
   }
+  // banner下一张
   next() {
     this.myRef.next();
   }
+  // 产品tab切换
   tabClick(index: number) {
     return this.state.current === index ? 'now' : '';
   }
   render() {
+    console.log(this.state.bannerImgs);
+    const tabId = this.props.id; // 顶部tabId
+    console.log(tabId);
+    let banner = (tabId === 0 ? this.state.bannerImgs.banner1 : this.state.bannerImgs.banner2); // banner数组赋值
+    // banner遍历
+    console.log(banner);
+    let bannerList = banner ? banner.map((el: any, index: number) => {
+      return (
+        <div key={index}><img src={banner[index].imgUrl} alt=""/></div>
+      );
+    }) : ' ';
+    let tab = this.state.tabs; // 产品tab
+    // 产品tab遍历
+    let tabBar = tab.map((el: any, index: number) => {
+      return (
+        <button key={index} onClick={() => {this.setState({current: index}); }} className={this.tabClick(index)}>{tab[index].tabName}</button>
+      );
+    });
     return (
       <div>
         <div className="banner">
           <Carousel ref={(ref) => this.myRef = ref} dots={false} autoplay={true}>
-            <div><h3>1</h3></div>
-            <div><h3>2</h3></div>
-            <div><h3>23</h3></div>
-            <div><h3>24</h3></div>
+          {bannerList}
           </Carousel>
           <i className="left-btn" onClick={this.prev} /><i className="right-btn" onClick={this.next} />
         </div>
         <div className="product-con">
           <div className="product-con-tab">
-          {
-            React.Children.map(this.props.children, (element, index) => {
-              return (
-                <button onClick={() => {this.setState({current: index}); }} className={this.tabClick(index)}>{this.state.tabs[index].tabName}</button>
-              );
-            })
-          }
+          {tabBar}
           </div>
           <Tabs defaultActiveKey="1" onChange={callback}>
               <TabPane tab="磁源力" key="1"><h2>磁源力</h2><p>磁源力</p></TabPane>
@@ -62,16 +90,4 @@ class Products extends React.Component <any, any> {
     );
   }
 }
-class ProductTab extends React.Component <any, any> {
-  constructor (props: any) {
-    super(props);
-  }
-  render() {
-    return (
-      <Products>
-        <div/><div/>
-      </Products>
-    );
-  }
-}
-export default ProductTab;
+export default Products;
