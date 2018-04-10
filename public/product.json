@@ -2,15 +2,10 @@
     "data":{
         "bannerImgs": {
             "banner1": [
-                {"imgUrl": "https://shop.io.mi-img.com/app/shop/img?id=shop_b82e262f1059999cf0df9b50da0766f8.jpeg&w=1080&h=450"},
-                {"imgUrl": "https://shop.io.mi-img.com/app/shop/img?id=shop_a200ddaa0c59688fb6d83a1a4157df51.jpeg&w=1080&h=450"},
-                {"imgUrl": "https://shop.io.mi-img.com/app/shop/img?id=shop_9017e7f6ddf79fa8ebdc685262b01c06.jpeg&w=1080&h=450"},
-                {"imgUrl": "https://shop.io.mi-img.com/app/shop/img?id=shop_44d891699dfe332b471e3f3b4e9c329d.jpeg&w=1080&h=450"}
+                {"imgUrl": "../../assets/product/pro-cd-banner-1.jpg"}
             ],
             "banner2": [
-                {"imgUrl": "https://shop.io.mi-img.com/app/shop/img?id=shop_53509e2caf951363b77c7f546aa2317a.jpeg&w=1080&h=450"},
-                {"imgUrl": "https://shop.io.mi-img.com/app/shop/img?id=shop_53509e2caf951363b77c7f546aa2317a.jpeg&w=1080&h=450"},
-                {"imgUrl": "https://shop.io.mi-img.com/app/shop/img?id=shop_b82e262f1059999cf0df9b50da0766f8.jpeg&w=1080&h=450"}
+                {"imgUrl": "../../assets/product/pro-amy-banner-1.jpg"}
             ]
         }
     }

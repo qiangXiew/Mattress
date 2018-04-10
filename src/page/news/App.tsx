@@ -4,6 +4,7 @@ import { Tabs , Pagination } from 'antd';
 import * as moment from 'moment';
 import webAPI from '../../lib/webApi';
 const TabPane = Tabs.TabPane;
+const banner = require('../../assets/news/news-banner.jpg');
 
 // function callback(key: string) {
 //   console.log(key);
@@ -55,7 +56,7 @@ class News extends React.Component<any, any> {
     return (
       <div className="aboutus">
         <div className="banner">
-            <img src="" alt=""/>
+            <img src={banner} alt=""/>
           </div>
           <div className="aboutusTab">
             <Tabs defaultActiveKey="1" onChange={this.callback}>

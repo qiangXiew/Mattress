@@ -2,7 +2,7 @@ import * as React from 'react';
 import './aboutus.less';
 import { Tabs } from 'antd';
 const TabPane = Tabs.TabPane;
-// const bannerUrl = require('../../assets/headerLogo.png');
+const banner = require('../../assets/aboutUs/aboutus-banner.jpg');
 
 function callback(key: string) {
   console.log(key);
@@ -13,7 +13,7 @@ class Aboutus extends React.Component {
     return (
       <div className="aboutus">
         <div className="banner">
-          <img src="" alt=""/>
+          <img src={banner} alt=""/>
         </div>
         <div className="aboutusTab">
           <Tabs defaultActiveKey="1" onChange={callback}>

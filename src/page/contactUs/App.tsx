@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Col, Tabs } from 'antd';
 import './App.less';
 const TabPane = Tabs.TabPane;
+const banner = require('../../assets/contactus/contact-banner.jpg');
 
 function callback(key: string) {
   console.log(key);
@@ -25,7 +26,7 @@ class App extends React.Component<any, any> {
     return (
       <div id="contactUs">
         <Col span={24} >
-          <div className="images" />
+          <div className="images"><img src={banner} alt=""/></div>
         </Col>
         <div className="content">
           <Col className="mix-pd" span={24} >

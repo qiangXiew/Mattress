@@ -2,7 +2,10 @@ import * as React from 'react';
 
 import './App.less';
 import { Carousel, Row, Col } from 'antd';
-// const ads = Carousel
+const tabRecommendImgs = {
+  'img1' : require('../../../../assets/index/index-pro-rec-1.jpg'),
+  'img2' : require('../../../../assets/index/index-pro-rec-2.jpg')
+};
 
 class App extends React.Component<any, any> {
   public myRef: any = Carousel;
@@ -35,8 +38,8 @@ class App extends React.Component<any, any> {
         </Col>
         <Col span={18}>
           <Carousel ref={(ref) => this.myRef = ref} className="tab-function" dots={false} infinite={true} vertical={true} >
-            <div><h3>1</h3></div>
-            <div><h3>2</h3></div>
+            <div><h3><img src={tabRecommendImgs.img1} alt=""/></h3></div>
+            <div><h3><img src={tabRecommendImgs.img2} alt=""/></h3></div>
           </Carousel>
         </Col>
       </div >

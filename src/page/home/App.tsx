@@ -21,11 +21,11 @@ class App extends React.Component<any, any> {
     return (
       <div className="App">
         <Carousel effect="fade" autoplay={true} >
-          <div><h3>1</h3></div>
-          <div><h3>2</h3></div>
-          <div><h3>3</h3></div>
-          <div><h3>4</h3></div>
-          <div><h3>5</h3></div>
+          <div><h3><img src={require('../../assets/index/index-banner-1.png')} alt=""/></h3></div>
+          <div><h3><img src={require('../../assets/index/index-banner-2.png')} alt=""/></h3></div>
+          <div><h3><img src={require('../../assets/index/index-banner-3.png')} alt=""/></h3></div>
+          <div><h3><img src={require('../../assets/index/index-banner-4.png')} alt=""/></h3></div>
+          <div><h3><img src={require('../../assets/index/index-banner-5.png')} alt=""/></h3></div>
         </Carousel>
         
         <Portals title="产品功能" desc="PRODUCT FUNCTION" content={<ProFun/>} />

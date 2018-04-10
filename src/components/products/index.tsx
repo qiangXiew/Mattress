@@ -1,7 +1,6 @@
 import * as React from 'react';
 import './product.less';
 import { Carousel, Tabs } from 'antd';
-// import axios from 'axios';
 import webApi from '../../lib/webApi';
 const TabPane = Tabs.TabPane;
 function callback(key: any) {
@@ -29,12 +28,9 @@ class Products extends React.Component <any, any> {
   }
   async publicRes() {
     let publicCon = await webApi.enroll.product();
-    console.log(publicCon.data.data.bannerImgs);
-    console.log(this);
     this.setState({
       bannerImgs: publicCon.data.data.bannerImgs
     });
-    console.log(this.state);
   }
   // banner前一张
   prev() {
@@ -49,12 +45,11 @@ class Products extends React.Component <any, any> {
     return this.state.current === index ? 'now' : '';
   }
   render() {
-    console.log(this.state.bannerImgs);
     const tabId = this.props.id; // 顶部tabId
-    console.log(tabId);
     let banner = (tabId === 0 ? this.state.bannerImgs.banner1 : this.state.bannerImgs.banner2); // banner数组赋值
     // banner遍历
     let bannerList = banner ? banner.map((el: any, index: number) => {
+      console.log(banner[index].imgUrl);
       return (
         <div key={index}><img src={banner[index].imgUrl} alt=""/></div>
       );
@@ -69,7 +64,8 @@ class Products extends React.Component <any, any> {
     return (
       <div>
         <div className="banner">
-          <Carousel ref={(ref) => this.myRef = ref} dots={false} autoplay={true}>
+         {/* autoplay={true} */}
+          <Carousel ref={(ref) => this.myRef = ref} dots={false}> 
           {bannerList}
           </Carousel>
           <i className="left-btn" onClick={this.prev} /><i className="right-btn" onClick={this.next} />
