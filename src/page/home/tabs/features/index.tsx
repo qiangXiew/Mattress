@@ -1,20 +1,6 @@
 import * as React from 'react';
 import { Row, Col } from 'antd';
 import './App.less';
-// const tabFeatures = {
-//   // tabFeatures 特点1
-//   'styl-1': require('../../../../assets/index/index-pro-point-def-1.jpg'),
-//   // tabFeatures 特点2
-//   'styl-2': require('../../../../assets/index/index-pro-point-def-2.jpg'),
-//   // tabFeatures 特点3
-//   'styl-3': require('../../../../assets/index/index-pro-point-def-3.jpg'),
-//   // tabFeatures 特点4
-//   'styl-4': require('../../../../assets/index/index-pro-point-def-4.jpg'),
-//   // tabFeatures 特点5
-//   'styl-5': require('../../../../assets/index/index-pro-point-def-5.jpg'),
-//   // tabFeatures 背景图
-//   'styl-6': require('../../../../assets/index/index-pro-point-bg.jpg')
-// };
 
 class App extends React.Component<any, any> {
   constructor(props: any) {

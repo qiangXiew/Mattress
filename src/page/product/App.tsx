@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './product.less';
-import Products from '../../components/products';
+import Products from './productModule';
 
 class ProductTab extends React.Component<any, any> {
   constructor(props: any) {

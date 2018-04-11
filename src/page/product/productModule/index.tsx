@@ -1,11 +1,8 @@
 import * as React from 'react';
-import './product.less';
-import { Carousel, Tabs } from 'antd';
-import webApi from '../../lib/webApi';
-const TabPane = Tabs.TabPane;
-function callback(key: any) {
-  console.log(key);
-}
+import './productModule.less';
+import { Carousel } from 'antd';
+import FunModule from '../funModule/App';
+// import webApi from '../../../lib/webApi';
 
 class Products extends React.Component <any, any> {
   public myRef: any = Carousel;
@@ -14,7 +11,14 @@ class Products extends React.Component <any, any> {
     this.prev = this.prev.bind(this);
     this.next = this.next.bind(this);
     this.state = {
-      bannerImgs: {},
+      bannerImgs: {
+        banner1: [
+          {imgUrl: require('../../../assets/product/pro-cd-banner-1.jpg')}
+        ],
+        banner2: [
+          {imgUrl: require('../../../assets/product/pro-amy-banner-1.jpg')}
+        ]
+      },
       tabs: [
         {tabName: '产品功能', id: 1},
         {tabName: '产品特点', id: 2}
@@ -23,15 +27,15 @@ class Products extends React.Component <any, any> {
       tabId: 0
     };
   }
-  componentDidMount() {
-    this.publicRes();
-  }
-  async publicRes() {
-    let publicCon = await webApi.enroll.product();
-    this.setState({
-      bannerImgs: publicCon.data.data.bannerImgs
-    });
-  }
+  // componentDidMount() {
+  //   this.publicRes();
+  // }
+  // async publicRes() {
+  //   let publicCon = await webApi.enroll.product();
+  //   this.setState({
+  //     bannerImgs: publicCon.data.data.bannerImgs
+  //   });
+  // }
   // banner前一张
   prev() {
     this.myRef.prev();
@@ -49,7 +53,6 @@ class Products extends React.Component <any, any> {
     let banner = (tabId === 0 ? this.state.bannerImgs.banner1 : this.state.bannerImgs.banner2); // banner数组赋值
     // banner遍历
     let bannerList = banner ? banner.map((el: any, index: number) => {
-      console.log(banner[index].imgUrl);
       return (
         <div key={index}><img src={banner[index].imgUrl} alt=""/></div>
       );
@@ -74,12 +77,7 @@ class Products extends React.Component <any, any> {
           <div className="product-con-tab">
           {tabBar}
           </div>
-          <Tabs defaultActiveKey="1" onChange={callback}>
-            <TabPane tab="磁源力" key="1"><h2>磁源力</h2><p>磁源力</p></TabPane>
-            <TabPane tab="远红外" key="2"><h2>远红外</h2><p>远红外</p></TabPane>
-            <TabPane tab="负离子" key="3"><h2>负离子</h2><p>负离子</p></TabPane>
-            <TabPane tab="超长波" key="4"><h2>超长波</h2><p>超长波</p></TabPane>
-          </Tabs>
+          <FunModule id={this.state.current} tabId={tabId}/>
         </div>
       </div>
     );
