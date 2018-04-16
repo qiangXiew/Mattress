@@ -20,10 +20,10 @@ const BasicExample = () => (
         <div>
             <Header />
             <Route exact={true} path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/product" component={Product} />
-            <Route path="/news" component={News} />
-            <Route path="/contactUs" component={ContactUs} />
+            <Route path="/about/:id" component={About} />
+            <Route path="/product/:id" component={Product} />
+            <Route path="/news/:id" component={News} />
+            <Route path="/contactUs/:id" component={ContactUs} />
 
             <Footer />
             <div id="backTop">

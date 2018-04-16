@@ -4,6 +4,7 @@ import { Tabs , Pagination } from 'antd';
 import * as moment from 'moment';
 import webAPI from '../../lib/webApi';
 const TabPane = Tabs.TabPane;
+const banner = require('../../assets/news/news-banner.jpg');
 
 // function callback(key: string) {
 //   console.log(key);
@@ -15,14 +16,9 @@ class News extends React.Component<any, any> {
     this.state = {newsdata: [], tabId: 0, total: 0};
     this.callback = this.callback.bind(this);
   }
-  componentWillMount () {
+  componentDidMount () {
     this.newsRes();
   }
-  // callback(num: number) {
-  //   this.setState({
-  //     tabId: num
-  //   })
-  // }
   callback(key: string) {
     console.log(this);
     this.setState({
@@ -35,14 +31,25 @@ class News extends React.Component<any, any> {
       tabId: this.state.tabId
     };
     let res = await webAPI.enroll.news(parth);
+    console.log(res.data.data);
     this.setState({
       newsdata: res.data.data,
       total: res.data.data.length
     });
-  }  
+    console.log(this.state);
+  } 
+  
+  componentWillMount() {
+    const id = this.props.match.params.id;
+    if (id) {
+      this.setState({
+        tabId: id
+      });
+    }
+  }
   render() {
     const con = this.state.newsdata;
-    console.log(this.state.tabId);
+    console.log(con);
     let newsList = con.map((el: any, index: number) => {
       return (
         <div className="news-list" key={index}>
@@ -58,10 +65,10 @@ class News extends React.Component<any, any> {
     return (
       <div className="aboutus">
         <div className="banner">
-            <img src="" alt=""/>
+            <img src={banner} alt=""/>
           </div>
           <div className="aboutusTab">
-            <Tabs defaultActiveKey="1" onChange={this.callback}>
+            <Tabs defaultActiveKey={this.state.tabId} onChange={this.callback}>
               <TabPane tab="公司新闻" key="1">
                 {newsList}
                 <Pagination defaultCurrent={1} total={this.state.total} />

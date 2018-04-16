@@ -28,7 +28,8 @@ class WebApi {
     }
 
     _getApi() {
-        this.enroll.news = (data: any) => this._ApiRes(Config.news, data, {});
+        this.enroll.news = (data: any) =>  this._ApiRes(Config.news, data, {}); 
+        this.enroll.product = (data: any) =>  this._ApiRes(Config.product, data, {});
     }
 
 }
