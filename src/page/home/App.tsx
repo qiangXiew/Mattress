@@ -14,18 +14,25 @@ class App extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
-      date: '我的标题'
+      date: '我的标题',
+      banner: [
+        {imgUrl: require('../../assets/index/index-banner-1.png')},
+        {imgUrl: require('../../assets/index/index-banner-2.png')},
+        {imgUrl: require('../../assets/index/index-banner-3.png')},
+        {imgUrl: require('../../assets/index/index-banner-4.png')},
+        {imgUrl: require('../../assets/index/index-banner-5.png')},
+      ]
     };
   }
   render() {
+    const bannerImg = this.state.banner;
+    let bannerList = bannerImg.map((el: any, index: number) => {
+      return <div key={index}><h3><img src={bannerImg[index].imgUrl} alt=""/></h3></div>;
+    });
     return (
       <div className="App">
         <Carousel effect="fade" autoplay={true} >
-          <div><h3>1</h3></div>
-          <div><h3>2</h3></div>
-          <div><h3>3</h3></div>
-          <div><h3>4</h3></div>
-          <div><h3>5</h3></div>
+          {bannerList}
         </Carousel>
         
         <Portals title="产品功能" desc="PRODUCT FUNCTION" content={<ProFun/>} />

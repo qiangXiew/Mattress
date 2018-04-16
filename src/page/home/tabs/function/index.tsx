@@ -2,7 +2,12 @@ import * as React from 'react';
 
 import './App.less';
 import { Carousel, Row, Col } from 'antd';
-// const ads = Carousel
+const tabFunctionImgs = {
+  'img1' : require('../../../../assets/index/index-pro-fun-1.png'),
+  'img2' : require('../../../../assets/index/index-pro-fun-2.png'),
+  'img3' : require('../../../../assets/index/index-pro-fun-3.png'),
+  'img4' : require('../../../../assets/index/index-pro-fun-4.png')
+};
 
 class App extends React.Component<any, any> {
   public myRef: any = Carousel;
@@ -52,10 +57,10 @@ class App extends React.Component<any, any> {
       <div id="tab_function" className="content" >
         <Col span={13}>
           <Carousel ref={(ref) => this.myRef = ref} className="tab-function" dots={false} infinite={true}  >
-            <div><h3>1</h3></div>
-            <div><h3>2</h3></div>
-            <div><h3>3</h3></div>
-            <div><h3>4</h3></div>
+            <div><h3><img src={tabFunctionImgs.img1} alt=""/></h3></div>
+            <div><h3><img src={tabFunctionImgs.img2} alt=""/></h3></div>
+            <div><h3><img src={tabFunctionImgs.img3} alt=""/></h3></div>
+            <div><h3><img src={tabFunctionImgs.img4} alt=""/></h3></div>
           </Carousel>
         </Col>
         <Col span={11}>
