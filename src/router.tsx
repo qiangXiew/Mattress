@@ -23,7 +23,7 @@ const BasicExample = () => (
             <Route path="/about/:id" component={About} />
             <Route path="/product/:id" component={Product} />
             <Route path="/news/:id" component={News} />
-            <Route path="/contactUs" component={ContactUs} />
+            <Route path="/contactUs/:id" component={ContactUs} />
 
             <Footer />
             <div id="backTop">

@@ -15,8 +15,18 @@ class App extends React.Component<any, any> {
     super(props);
     this.state = {
       tabVal: 'a',
-      add: '123'
+      add: '123',
+      tabId: 1
     };
+  }
+
+  componentWillMount() {
+    const id = this.props.match.params.id;
+    if (id) {
+      this.setState({
+        tabId: id
+      });
+    }
   }
 
   callBack = (value: any) => {
@@ -35,7 +45,7 @@ class App extends React.Component<any, any> {
         </Col>
         <div className="content">
           <Col className="mix-pd" span={24} >
-            <Tabs defaultActiveKey="1" onChange={callback}>
+            <Tabs defaultActiveKey={this.state.tabId} onChange={callback}>
               <TabPane tab="联系方式" key="1"><h2>联系方式</h2><p>联系电话：400-036-1855<br/><br/>企业邮箱：weiersilipu@sina.com</p></TabPane>
               <TabPane tab="合作店铺" key="2"><h2>合作店铺</h2><Store/></TabPane>
               <TabPane tab="招聘信息" key="3"><h2>招聘信息</h2><p>裥棉工：<br/>

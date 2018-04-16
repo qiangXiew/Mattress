@@ -38,9 +38,9 @@ class Footer extends React.Component {
           </Col>
           <Col className="fMenu" xs={24} sm={24} md={4}>
             <Row><h1>联系我们</h1><i>Contact us</i></Row>
-            <Row>联系方式</Row>
-            <Row>合作店铺</Row>
-            <Row>招聘信息</Row>
+            <Row><a href="/contactUs/1">联系方式</a></Row>
+            <Row><a href="/contactUs/2">合作店铺</a></Row>
+            <Row><a href="/contactUs/3">招聘信息</a></Row>
           </Col>
         </div>
         <Col md={24} className="copyright">Copyright © 2016 红舞联盟 版权所有 京ICP备15050543-1</Col>
