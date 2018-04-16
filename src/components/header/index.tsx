@@ -28,11 +28,11 @@ class Header extends React.Component<any, any> {
                 <Row type="flex" justify="center">
                     <Menu className="menu content" theme="light" mode="horizontal" defaultSelectedKeys={[window.location.pathname]} >
                         <Menu.Item key="/"><Link to="/">首页</Link></Menu.Item>
-                        <Menu.Item key="/about"><Link to="/about">关于我们</Link></Menu.Item>
-                        <Menu.Item key="/product"><Link to="/product">产品中心</Link></Menu.Item>
+                        <Menu.Item key="/about"><Link to="/about/1">关于我们</Link></Menu.Item>
+                        <Menu.Item key="/product"><Link to="/product/0">产品中心</Link></Menu.Item>
                         <Menu.SubMenu key="/news" title="新闻中心">
-                            <Menu.Item><Link to="/news">新闻类1</Link></Menu.Item>
-                            <Menu.Item><Link to="/news">新闻类2</Link></Menu.Item>
+                            <Menu.Item><a href="/news/1">新闻类1</a></Menu.Item>
+                            <Menu.Item><a href="/news/2">新闻类2</a></Menu.Item>
                         </Menu.SubMenu>
                         <Menu.Item key="/contactUs"><Link to="/contactUs">联系我们</Link></Menu.Item>
                     </Menu>

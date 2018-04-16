@@ -20,20 +20,21 @@ class Footer extends React.Component {
           </Col>
           <Col className="fMenu active" xs={24} sm={24} md={4}>
             <Row><h1>关于我们</h1><i>ABOUT US</i></Row>
-            <Row>大事记</Row>
-            <Row>企业文化</Row>
-            <Row>产品代言</Row>
-            <Row>唯一合作商</Row>
+            <Row><a href="/about/1">品牌简介</a></Row>
+            <Row><a href="/about/2">大事记</a></Row>
+            <Row><a href="/about/3">企业文化</a></Row>
+            <Row><a href="/about/4">产品代言</a></Row>
+            <Row><a href="/about/5">唯一合作商</a></Row>
           </Col>
           <Col className="fMenu" xs={24} sm={24} md={4}>
             <Row><h1>产品中心</h1><i>Product Center</i></Row>
-            <Row>亚磁热疗养生床垫</Row>
-            <Row>3D气压全位按摩椅</Row>
+            <Row><a href="/Product/0">亚磁热疗养生床垫</a></Row>
+            <Row><a href="/Product/1">3D气压全位按摩椅</a></Row>
           </Col>
           <Col className="fMenu" xs={24} sm={24} md={4}>
             <Row><h1>新闻中心</h1><i>Product Center</i></Row>
-            <Row>公司新闻</Row>
-            <Row>健康提醒</Row>
+            <Row><a href="/news/1">公司新闻</a></Row>
+            <Row><a href="/news/2">健康提醒</a></Row>
           </Col>
           <Col className="fMenu" xs={24} sm={24} md={4}>
             <Row><h1>联系我们</h1><i>Contact us</i></Row>

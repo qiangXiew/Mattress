@@ -50,6 +50,7 @@ class Products extends React.Component <any, any> {
   }
   render() {
     const tabId = this.props.id; // 顶部tabId
+    console.log(this.state.current);
     let banner = (tabId === 0 ? this.state.bannerImgs.banner1 : this.state.bannerImgs.banner2); // banner数组赋值
     // banner遍历
     let bannerList = banner ? banner.map((el: any, index: number) => {

@@ -37,7 +37,16 @@ class News extends React.Component<any, any> {
       total: res.data.data.length
     });
     console.log(this.state);
-  }  
+  } 
+  
+  componentWillMount() {
+    const id = this.props.match.params.id;
+    if (id) {
+      this.setState({
+        tabId: id
+      });
+    }
+  }
   render() {
     const con = this.state.newsdata;
     console.log(con);
@@ -59,7 +68,7 @@ class News extends React.Component<any, any> {
             <img src={banner} alt=""/>
           </div>
           <div className="aboutusTab">
-            <Tabs defaultActiveKey="1" onChange={this.callback}>
+            <Tabs defaultActiveKey={this.state.tabId} onChange={this.callback}>
               <TabPane tab="公司新闻" key="1">
                 {newsList}
                 <Pagination defaultCurrent={1} total={this.state.total} />
