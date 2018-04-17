@@ -21,7 +21,7 @@ const BasicExample = () => (
             <Header />
             <Route exact={true} path="/" component={Home} />
             <Route path="/about/:id" component={About} />
-            <Route path="/product/:id" component={Product} />
+            <Route path="/product/:id/:FPTId/:funcId" component={Product} />
             <Route path="/news/:id" component={News} />
             <Route path="/contactUs/:id" component={ContactUs} />
 

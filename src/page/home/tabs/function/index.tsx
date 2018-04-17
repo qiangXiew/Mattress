@@ -57,14 +57,14 @@ class App extends React.Component<any, any> {
       <div id="tab_function" className="content" >
         <Col span={13}>
           <Carousel ref={(ref) => this.myRef = ref} className="tab-function" dots={false} infinite={true}  >
-            <div><h3><img src={tabFunctionImgs.img1} alt=""/></h3></div>
-            <div><h3><img src={tabFunctionImgs.img2} alt=""/></h3></div>
-            <div><h3><img src={tabFunctionImgs.img3} alt=""/></h3></div>
-            <div><h3><img src={tabFunctionImgs.img4} alt=""/></h3></div>
+            <a href="/Product/0/0/0"><img src={tabFunctionImgs.img1} alt=""/></a>
+            <a href="/Product/0/0/1"><img src={tabFunctionImgs.img2} alt=""/></a>
+            <a href="/Product/0/0/2"><img src={tabFunctionImgs.img3} alt=""/></a>
+            <a href="/Product/0/0/3"><img src={tabFunctionImgs.img4} alt=""/></a>
           </Carousel>
         </Col>
         <Col span={11}>
-          <video controls={true} src="http://www.w3school.com.cn/i/movie.ogg" >your browser does not support the video tag</video>
+          <video controls={true} src="https://qiniu.hong5.com.cn/pc/video/wrslp01.mp4" >your browser does not support the video tag</video>
         </Col>
         <Row className="fun_bar">
           {rows}

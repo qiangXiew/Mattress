@@ -38,8 +38,8 @@ class App extends React.Component<any, any> {
         </Col>
         <Col span={18}>
           <Carousel ref={(ref) => this.myRef = ref} className="tab-function" dots={false} infinite={true} vertical={true} >
-            <div><h3><img src={tabRecommendImgs.img1} alt=""/></h3></div>
-            <div><h3><img src={tabRecommendImgs.img2} alt=""/></h3></div>
+            <a href="Product/0"><img src={tabRecommendImgs.img1} alt=""/></a>
+            <a href="Product/1"><img src={tabRecommendImgs.img2} alt=""/></a>
           </Carousel>
         </Col>
       </div >

@@ -6,18 +6,13 @@ import Store from './store/App';
 const TabPane = Tabs.TabPane;
 const banner = require('../../assets/contactus/contact-banner.jpg');
 
-function callback(key: string) {
-  return key;
-}
-
 class App extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
-      tabVal: 'a',
-      add: '123',
       tabId: 1
     };
+    this.callback = this.callback.bind(this);
   }
 
   componentWillMount() {
@@ -29,23 +24,26 @@ class App extends React.Component<any, any> {
     }
   }
 
-  callBack = (value: any) => {
-    const tabVal = value.target.value;
-    this.setState({ tabVal });
-    console.log(this.state.tabVal);
+  callback(key: any) {
+    console.log(key);
+    this.setState({
+      tabId: key
+    });
   }
+
   render() {
+    let city = (Number(this.state.tabId) === 2) ? <City/> : '';
     return (
       <div id="contactUs">
         <Col span={24} >
           <div className="images">
             <img src={banner} alt=""/>
-            <City/>
+            {city}
           </div>
         </Col>
         <div className="content">
           <Col className="mix-pd" span={24} >
-            <Tabs defaultActiveKey={this.state.tabId} onChange={callback}>
+            <Tabs defaultActiveKey={this.state.tabId} onChange={this.callback}>
               <TabPane tab="联系方式" key="1"><h2>联系方式</h2><p>联系电话：400-036-1855<br/><br/>企业邮箱：weiersilipu@sina.com</p></TabPane>
               <TabPane tab="合作店铺" key="2"><h2>合作店铺</h2><Store/></TabPane>
               <TabPane tab="招聘信息" key="3"><h2>招聘信息</h2><p>裥棉工：<br/>
