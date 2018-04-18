@@ -11,6 +11,8 @@ import About from './page/aboutus/App';
 import Product from './page/product/App';
 // 新闻中心
 import News from './page/news/App';
+// 新闻详情页
+import NewsCon from './page/news/newscon/App';
 // 联系我们
 import ContactUs from './page/contactUs/App';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -23,6 +25,7 @@ const BasicExample = () => (
             <Route path="/about/:id" component={About} />
             <Route path="/product/:id/:FPTId/:funcId" component={Product} />
             <Route path="/news/:id" component={News} />
+            <Route path="/newscon/:con" component={NewsCon} />
             <Route path="/contactUs/:id" component={ContactUs} />
 
             <Footer />

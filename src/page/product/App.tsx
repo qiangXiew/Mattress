@@ -23,6 +23,10 @@ class ProductTab extends React.Component<any, any> {
       tabId: id
     });
   }
+
+  componentWillMount() {
+    document.title = '产品中心';
+  }
   render() {
     const tabs = this.state.tabs;
     const funcId = this.props.match.params.funcId; // 各个功能特点ID

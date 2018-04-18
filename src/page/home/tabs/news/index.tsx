@@ -16,7 +16,6 @@ class App extends React.Component<any, any> {
       topNews: {}
     };
     this.callback = this.callback.bind(this);
-    this.mouseleave = this.mouseleave.bind(this);
   }
 
   componentDidMount() {
@@ -51,23 +50,18 @@ class App extends React.Component<any, any> {
     });
   } 
 
-  mouseover(index: number) {
-    return this.state.newsId === index ? 'index-new-list active' : 'index-new-list';
-  }
-  mouseleave() {
-    this.setState({
-      newsId: null
-    });
-  }
-
   render() {
     const newsData = this.state.newsdata.slice(0, 3);
+    console.log(newsData);
     let newsList = newsData.map((el: any, index: number) => {
+      var data = newsData[index];
+      data = JSON.stringify(data);
+      var path = `/NewsCon/${data}`;
       return (
-        <div className={this.mouseover(index)} key={index} onMouseOver={() => this.setState({newsId: index})} onMouseLeave={this.mouseleave}>
+        <a href={path} key={index}>
           <p className="time"><em>{moment(newsData[index].createTime).format('YYYY-MM-DD').substring(8, 10)}</em><br/>{moment(newsData[index].createTime).format('YYYY-MM-DD').substring(0, 7)}</p>
-          <div className="txt"><i>{newsData[index].title}</i><p>{newsData[index].details}</p></div>
-        </div>
+          <div className="txt"><i>{newsData[index].title}</i><p>{newsData[index].bewrite}</p></div>
+        </a>
       );
     });
     return (
@@ -78,8 +72,8 @@ class App extends React.Component<any, any> {
           </div>
           <div>
             <h1>{this.state.topNews.title} <span>{moment(this.state.topNews.createTime).format('YYYY-MM-DD')}</span></h1>
-            <p>{this.state.topNews.details}</p>
-            <p><a href="#">查看详情></a></p>
+            <p>{this.state.topNews.bewrite}</p>
+            <p><a href={`/NewsCon/${JSON.stringify(this.state.topNews)}`}>查看详情></a></p>
           </div>
         </Col>
         <Col span={12}>
