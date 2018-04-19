@@ -54,8 +54,8 @@ class App extends React.Component<any, any> {
     const newsData = this.state.newsdata.slice(0, 3);
     console.log(newsData);
     let newsList = newsData.map((el: any, index: number) => {
-      var data = newsData[index];
-      data = JSON.stringify(data);
+      var data = newsData[index].bewrite;
+      // data = JSON.stringify(data);
       var path = `/NewsCon/${data}`;
       return (
         <a href={path} key={index}>
@@ -73,7 +73,7 @@ class App extends React.Component<any, any> {
           <div>
             <h1>{this.state.topNews.title} <span>{moment(this.state.topNews.createTime).format('YYYY-MM-DD')}</span></h1>
             <p>{this.state.topNews.bewrite}</p>
-            <p><a href={`/NewsCon/${JSON.stringify(this.state.topNews)}`}>查看详情></a></p>
+            <p><a href={`/NewsCon/${this.state.topNews.bewrite}`}>查看详情></a></p>
           </div>
         </Col>
         <Col span={12}>
