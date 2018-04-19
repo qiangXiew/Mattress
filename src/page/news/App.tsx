@@ -40,6 +40,7 @@ class News extends React.Component<any, any> {
   } 
   
   componentWillMount() {
+    document.title = '新闻中心';
     const id = this.props.match.params.id;
     if (id) {
       this.setState({
@@ -49,14 +50,16 @@ class News extends React.Component<any, any> {
   }
   render() {
     const con = this.state.newsdata;
-    console.log(con);
     let newsList = con.map((el: any, index: number) => {
+      var data = con[index].bewrite;
+      // data = JSON.stringify(data);
+      var path = `/NewsCon/${data}`;
       return (
         <div className="news-list" key={index}>
-          <div className="news-list-img"><img src={con[index].imgUrl} alt=""/></div>
+          <a href={path} className="news-list-img"><img src={con[index].imgUrl} alt=""/></a>
           <div className="news-list-txt">
             <h3>{con[index].title}</h3>
-            <p>{con[index].details}</p>
+            <p>{con[index].bewrite}</p>
             <em>{moment(con[index].createTime).format('YYYY-MM-DD HH:mm:ss')}</em>
           </div>
         </div>

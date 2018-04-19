@@ -15,10 +15,22 @@ class ProductTab extends React.Component<any, any> {
     this.tab = this.tab.bind(this);
   }
   tab = (index: number) => {
-    return this.state.tabId === index ? 'active' : '';
+    return Number(this.state.tabId) === index ? 'active' : '';
+  }
+  componentDidMount() {
+    const id = this.props.match.params.id;
+    this.setState({
+      tabId: id
+    });
+  }
+
+  componentWillMount() {
+    document.title = '产品中心';
   }
   render() {
     const tabs = this.state.tabs;
+    const funcId = this.props.match.params.funcId; // 各个功能特点ID
+    const funPointTabId = this.props.match.params.FPTId; // 功能特点切换ID
     let tab = tabs.map((el: any, index: number) => {
       return (
         <p key={index} onClick={() => {this.setState({ tabId: index }); }} className={this.tab (index)}>{tabs[index].tabName}</p>        
@@ -29,7 +41,7 @@ class ProductTab extends React.Component<any, any> {
         <div className="pro-tab">
         {tab}
         </div>
-        <Products id={this.state.tabId}/>
+        <Products id={this.state.tabId} funcId={funcId} funPointTabId={funPointTabId}/>
       </div>
     );
   }

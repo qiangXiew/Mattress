@@ -23,19 +23,26 @@ class Products extends React.Component <any, any> {
         {tabName: '产品功能', id: 1},
         {tabName: '产品特点', id: 2}
       ],
-      current: 0,
+      funPointTabId: 0,
       tabId: 0
     };
   }
-  // componentDidMount() {
-  //   this.publicRes();
-  // }
-  // async publicRes() {
-  //   let publicCon = await webApi.enroll.product();
-  //   this.setState({
-  //     bannerImgs: publicCon.data.data.bannerImgs
-  //   });
-  // }
+  // 产品切换，current置0
+  componentWillReceiveProps() {
+    // this.setState({funPointTabId: 0});
+    // const funPointTabId = this.props.funPointTabId; // 功能特点切换ID
+    // console.log(funPointTabId);
+    // this.setState({
+    //   funPointTabId: funPointTabId
+    // });
+  }
+
+  componentWillMount() {
+    const funPointTabId = this.props.funPointTabId; // 功能特点切换ID
+    this.setState({
+      funPointTabId: funPointTabId
+    });
+  }
   // banner前一张
   prev() {
     this.myRef.prev();
@@ -46,12 +53,12 @@ class Products extends React.Component <any, any> {
   }
   // 产品tab切换
   tabClick(index: number) {
-    return this.state.current === index ? 'now' : '';
+    return Number(this.state.funPointTabId) === index ? 'now' : '';
   }
   render() {
     const tabId = this.props.id; // 顶部tabId
-    console.log(this.state.current);
-    let banner = (tabId === 0 ? this.state.bannerImgs.banner1 : this.state.bannerImgs.banner2); // banner数组赋值
+    const funcId = this.props.funcId; // 各个功能特点ID
+    let banner = (Number(tabId) === 0 ? this.state.bannerImgs.banner1 : this.state.bannerImgs.banner2); // banner数组赋值
     // banner遍历
     let bannerList = banner ? banner.map((el: any, index: number) => {
       return (
@@ -62,7 +69,7 @@ class Products extends React.Component <any, any> {
     // 产品tab遍历
     let tabBar = tab.map((el: any, index: number) => {
       return (
-        <button key={index} onClick={() => {this.setState({current: index}); }} className={this.tabClick(index)}>{tab[index].tabName}</button>
+        <button key={index} onClick={() => {this.setState({funPointTabId: index}); }} className={this.tabClick(index)}>{tab[index].tabName}</button>
       );
     });
     return (
@@ -78,7 +85,7 @@ class Products extends React.Component <any, any> {
           <div className="product-con-tab">
           {tabBar}
           </div>
-          <FunModule id={this.state.current} tabId={tabId}/>
+          <FunModule id={this.state.funPointTabId} tabId={tabId} funcId={funcId}/>
         </div>
       </div>
     );

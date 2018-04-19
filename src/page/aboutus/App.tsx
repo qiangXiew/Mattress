@@ -16,6 +16,7 @@ class Aboutus extends React.Component<any, any> {
     };
   }
   componentWillMount() {
+    document.title = '关于我们';
     console.log(this.props.match.params.id);
     const id = this.props.match.params.id;
     console.log(id);
