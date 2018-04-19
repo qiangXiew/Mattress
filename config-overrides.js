@@ -2,7 +2,7 @@ const tsImportPluginFactory = require('ts-import-plugin')
 const { getLoader } = require("react-app-rewired");
 const rewireLess = require('react-app-rewire-less');
 
-module.exports = function override(config) {
+module.exports = function override(config, env) {
     const tsLoader = getLoader(
         config.module.rules,
         rule =>
@@ -23,7 +23,7 @@ module.exports = function override(config) {
 
     config = rewireLess.withLoaderOptions({
         modifyVars: { "@primary-color": "#C30D23" },
-    })(config);
+    })(config, env);
 
     return config;
 }

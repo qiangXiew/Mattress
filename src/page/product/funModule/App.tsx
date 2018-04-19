@@ -35,15 +35,17 @@ class FunModule extends React.Component<any, any> {
         };
     }
     render() {
-        const Id = this.props.id; // 功能特点切换ID
-        const tabId = this.props.tabId; // 产品切换ID
-        let con = (tabId === 0 ? this.state.con1 : this.state.con2) ;
-        let conList = (Id === 0 ? con.conList1 : con.conList2) ;
+        const Id = this.props.id; // 功能、特点切换ID
+        const tabId = this.props.tabId; // 床垫、按摩椅切换ID
+        const funcId = this.props.funcId; // 各个功能特点ID
+        console.log(Id + '---' + funcId);
+        let con = (Number(tabId) === 0 ? this.state.con1 : this.state.con2) ;
+        let conList = (Number(Id) === 0 ? con.conList1 : con.conList2) ;
         let TabPaneList = conList.map((el: any, index: number) => {
             return <TabPane tab={conList[index].tabName} key={index}><h2 className="TabTitle">{conList[index].title}</h2>{conList[index].details}</TabPane>;
         });
         return (
-            <Tabs defaultActiveKey="0" onChange={callback}>
+            <Tabs defaultActiveKey={funcId} onChange={callback}>
             {TabPaneList}
             </Tabs>
         );
