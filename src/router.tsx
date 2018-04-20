@@ -31,10 +31,10 @@ const BasicExample = () => (
             <Footer />
             <div id="backTop">
                 <span><Icon type="phone" /></span>
-                <span><Icon type="wechat" /></span>
+                {/* <span><Icon type="wechat" /></span>
                 <span><Icon type="qq" /></span>
                 <span><Icon type="weibo" /></span>
-                <span><Icon type="message" /></span>
+                <span><Icon type="message" /></span> */}
                 <BackTop />
             </div>
         </div>
