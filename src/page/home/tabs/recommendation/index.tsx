@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import { Icon } from 'antd';
 import './App.less';
 import { Carousel, Row, Col } from 'antd';
 const tabRecommendImgs = {
@@ -34,10 +34,10 @@ class App extends React.Component<any, any> {
       <div id="tab_recommend" className="content" >
         <Col span={6} className="fun_bar" >
           <Row className="da1" onMouseOver={this.isGoto.bind(this, 0)} >
-            <p className="title" >亚磁热疗养生床垫</p>
+            <p className="title" >亚磁热疗养生床垫<Icon type="right-circle-o" /></p>
           </Row>
           <Row className="da2" onMouseOver={this.isGoto.bind(this, 1)} >
-            <p className="title" >3D气压全位按摩椅</p>
+            <p className="title" >3D气压全位按摩椅<Icon type="right-circle-o" /></p>
           </Row>
         </Col>
         <Col span={18}>

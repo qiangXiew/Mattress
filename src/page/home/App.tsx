@@ -27,7 +27,7 @@ class App extends React.Component<any, any> {
   render() {
     const bannerImg = this.state.banner;
     let bannerList = bannerImg.map((el: any, index: number) => {
-      return <div key={index}><h3><img src={bannerImg[index].imgUrl} alt=""/></h3></div>;
+      return <div key={index}><img src={bannerImg[index].imgUrl} alt=""/></div>;
     });
     return (
       <div className="App">
