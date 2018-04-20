@@ -16,12 +16,12 @@ class Header extends React.Component<any, any> {
                 <div className="top">
                     <Row type="flex" justify="center">
                         <div className="content">
-                            <Col span={12}>
+                            <Col span={15}>
                                 <a href="http://www.hong5.com.cn" rel="nofollow">
                                     <img src={require('../../assets/headerLogo.png')} />
                                 </a>
                             </Col>
-                            <Col className="mobile" span={9} offset={3}><Icon type="phone" />4009-010-388</Col>
+                            <Col className="mobile" span={6} offset={3}><Icon type="phone" />4000-361-855</Col>
                         </div>
                     </Row>
                 </div>

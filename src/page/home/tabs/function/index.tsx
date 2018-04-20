@@ -43,15 +43,15 @@ class App extends React.Component<any, any> {
 
   render() {
     let rows: any = [];
-    // this.state.fun_bar.forEach((i: any, index: number) => {
-    //   rows.push(
-    //     <Col span={6} className="col" onMouseOver={this.isGoto.bind(this, index)} key={index}>
-    //       <p className="num" >{i.num}</p>
-    //       <p className="desc" >{i.desc}</p>
-    //       <p className="title" >{i.title}</p>
-    //     </Col>
-    //   );
-    // });
+    this.state.fun_bar.forEach((i: any, index: number) => {
+      rows.push(
+        <Col span={6} className="col" onMouseOver={this.isGoto.bind(this, index)} key={index}>
+          <p className="num" >{i.num}</p>
+          <p className="desc" >{i.desc}</p>
+          <p className="title" >{i.title}</p>
+        </Col>
+      );
+    });
 
     return (
       <div id="tab_function" className="content" >

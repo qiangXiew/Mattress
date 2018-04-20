@@ -44,7 +44,7 @@ class App extends React.Component<any, any> {
         <div className="content">
           <Col className="mix-pd" span={24} >
             <Tabs defaultActiveKey={this.state.tabId} onChange={this.callback}>
-              <TabPane tab="联系方式" key="1"><h2>联系方式</h2><p>联系电话：400-036-1855<br/><br/>企业邮箱：weiersilipu@sina.com</p></TabPane>
+              <TabPane tab="联系方式" key="1"><h2>联系方式</h2><p>联系电话：4000-361-855<br/><br/>企业邮箱：weiersilipu@sina.com</p></TabPane>
               <TabPane tab="合作店铺" key="2"><h2>合作店铺</h2><Store/></TabPane>
               <TabPane tab="招聘信息" key="3"><h2>招聘信息</h2><p>裥棉工：<br/>
 人数：2人<br/>

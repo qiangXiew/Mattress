@@ -11,10 +11,11 @@
   .fun_bar{
     user-select:none;
     > div{
-      height: 120px;
+      height: 190px;
       display: block;
       text-align: left;
       padding:10px;
+      border-top: 4px solid #ebebeb;
     }
     .num{
       font-size: 28px;
@@ -29,6 +30,15 @@
     .title{
       font-size: 20px;
       font-weight: bold;
+      i.anticon.anticon-right-circle-o::before{
+        display: inline-block;
+        margin-left: 28px;
+      }
+    }
+    .ant-row:hover{
+      .title{
+        color:#C30D23;
+      }
     }
   }
 }
