@@ -8,14 +8,15 @@ class NewsCon extends React.Component<any, any> {
     this.state = {};
   }
   render() {
-    const con = this.props.match.params.con;
+    const con = this.props.location.state;
     console.log(con);
     return (
       <div className="aboutus">
         <div className="banner">
             <img src={banner} alt=""/>
           </div>
-          <div className="aboutusTab">{con}</div>
+          <h4 dangerouslySetInnerHTML={{__html: con.title}}/>
+          <div className="aboutusTab" dangerouslySetInnerHTML={{__html: con.details}}/>
       </div>
     );
   }

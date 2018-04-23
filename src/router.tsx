@@ -25,7 +25,7 @@ const BasicExample = () => (
             <Route path="/about/:id" component={About} />
             <Route path="/product/:id/:FPTId/:funcId" component={Product} />
             <Route path="/news/:id" component={News} />
-            <Route path="/newscon/:con" component={NewsCon} />
+            <Route path="/newscon" component={NewsCon} />
             <Route path="/contactUs/:id" component={ContactUs} />
 
             <Footer />

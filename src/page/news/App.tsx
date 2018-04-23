@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './news.less';
 import { Tabs , Pagination } from 'antd';
+import { Link } from 'react-router-dom';
 import * as moment from 'moment';
 import webAPI from '../../lib/webApi';
 const TabPane = Tabs.TabPane;
@@ -51,18 +52,22 @@ class News extends React.Component<any, any> {
   render() {
     const con = this.state.newsdata;
     let newsList = con.map((el: any, index: number) => {
-      var data = con[index].bewrite;
+      var data = con[index];
       // data = JSON.stringify(data);
-      var path = `/NewsCon/${data}`;
+      // var path = {`/NewsCon/${data}`};
+      var path = {
+        pathname: '/newscon',
+        state: data
+      };
       return (
-        <div className="news-list" key={index}>
-          <a href={path} className="news-list-img"><img src={con[index].imgUrl} alt=""/></a>
+        <Link to={path} className="news-list" key={index}>
+          <div className="news-list-img"><img src={con[index].imgUrl} alt=""/></div>
           <div className="news-list-txt">
             <h3>{con[index].title}</h3>
             <p>{con[index].bewrite}</p>
             <em>{moment(con[index].createTime).format('YYYY-MM-DD HH:mm:ss')}</em>
           </div>
-        </div>
+        </Link>
       );
     });
     return (

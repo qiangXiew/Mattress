@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Col, Tabs } from 'antd';
 import './App.less';
-import City from './city/App';
+// import City from './city/App';
 import Store from './store/App';
 const TabPane = Tabs.TabPane;
 const banner = require('../../assets/contactus/contact-banner.jpg');
@@ -32,13 +32,13 @@ class App extends React.Component<any, any> {
   }
 
   render() {
-    let city = (Number(this.state.tabId) === 2) ? <City/> : '';
+    // let city = (Number(this.state.tabId) === 2) ? <City/> : '';
     return (
       <div id="contactUs">
         <Col span={24} >
           <div className="images">
             <img src={banner} alt=""/>
-            {city}
+            {/* {city} */}
           </div>
         </Col>
         <div className="content">
