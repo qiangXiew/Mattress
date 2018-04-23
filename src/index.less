@@ -14,11 +14,28 @@
     font-size: 25px;
     height: 40px;
     color: #999;
-    
+    position: relative;
+    p.tel{
+      display: none;
+      width:240px;
+      height:40px;
+      background: #fff;
+      border:1px solid #e5e5e5;
+      font-size: 18px;
+      color:#333;
+      text-align: center;
+      line-height: 40px;
+      position: absolute;
+      top:0;
+      right: 40px;
+    }
   }
   >span:hover{
     background-color:#C30D23;
     color: #fff;
+    p.tel{
+      display: block;
+    }
   }
   .ant-back-top{
     right: @bar_right;

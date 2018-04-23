@@ -17,7 +17,6 @@ class App extends React.Component<any, any> {
     };
   }
   isGoto(index: any) {
-    console.log('index=', index);
     this.myRef.goTo(index);
   }
   componentDidMount() {

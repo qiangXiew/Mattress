@@ -14,7 +14,6 @@ class Store extends React.Component<any, any> {
 
     componentWillMount() {
         document.title = '联系我们';
-        console.log(this);
     }
     toGo(id: number) {
         this.setState({

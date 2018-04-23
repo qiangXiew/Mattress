@@ -32,7 +32,6 @@ class App extends React.Component<any, any> {
     // e.bubbles;
     // e.stopPropagation();
     e.nativeEvent.stopImmediatePropagation();
-    console.log(index, e.currentTarget, e.bubbles);
     // e.style.color = 'red';
     this.myRef.goTo(index);
   }

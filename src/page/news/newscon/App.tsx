@@ -9,7 +9,6 @@ class NewsCon extends React.Component<any, any> {
   }
   render() {
     const con = this.props.location.state;
-    console.log(con);
     return (
       <div className="aboutus">
         <div className="banner">

@@ -31,7 +31,6 @@ class Products extends React.Component <any, any> {
   componentWillReceiveProps() {
     // this.setState({funPointTabId: 0});
     // const funPointTabId = this.props.funPointTabId; // 功能特点切换ID
-    // console.log(funPointTabId);
     // this.setState({
     //   funPointTabId: funPointTabId
     // });

@@ -3,11 +3,6 @@ import './aboutus.less';
 import { Tabs } from 'antd';
 const TabPane = Tabs.TabPane;
 const banner = require('../../assets/aboutUs/aboutus-banner.jpg');
-
-function callback(key: string) {
-  console.log(key);
-}
-
 class Aboutus extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
@@ -17,15 +12,12 @@ class Aboutus extends React.Component<any, any> {
   }
   componentWillMount() {
     document.title = '关于我们';
-    console.log(this.props.match.params.id);
     const id = this.props.match.params.id;
-    console.log(id);
     if (id) {
       this.setState({
         defaultActiveKey: id
       });
     }
-    console.log(this.state.defaultActiveKey);
   }
   render() {
     return (
@@ -34,7 +26,7 @@ class Aboutus extends React.Component<any, any> {
           <img src={banner} alt=""/>
         </div>
         <div className="aboutusTab">
-          <Tabs defaultActiveKey={this.state.defaultActiveKey} onChange={callback}>
+          <Tabs defaultActiveKey={this.state.defaultActiveKey}>
             <TabPane tab="品牌简介" key="1"><h2>品牌简介</h2><p>人最宝贵的是生命生命中最宝贵的是健康<br/>健康，改变生活<br/>健康<br/>是我们幸福生活的源泉<br/>是我们生命中最宝贵的财富<br/>没有健康一切为零<br/>威尔斯利普，给您科学的健康睡眠<br/>威尔斯利普，健康生活方式领航者<br/><br/>威尔斯利普专注于对中老年人身体健康的永恒需求，以前沿的科学技术为核心，以中老年人的身体需求为导向，致力于解决困扰中老年多种亚健康所引起的慢性疾病以及睡眠中的失眠等多种问题。作为健康领域的功能性寝具研发生产商、磁元素、远红外技术民用化转变等应用科技创领者，威尔斯利普秉承对社会群体健康睡眠的关怀，提供了健康广泛领域的解决方案。以前瞻的思想、创新的技术、深刻的商业理念和诚信的服务积极地支持中国健康产业的发展。威尔斯利普，关爱你我他、健康送到家的服务理念，致力于让科技造福生命。 <br/><br/>威尔斯利普热疗亚磁生态养生床垫的诞生是为了解决中老年人年轻时过度透支的身体所引发的一系列亚健康问题而精心研发的一款由健康绿色材质构成，能够改善人体健康睡眠的产品。产品精选优质原料，将中国传统的中医养生、人体力学与现代磁学科技的应用相结合，细致入微地对待每一个细节，将远红外磁疗功能性寝具产品的特色展现的淋漓尽致，升华人体睡眠质量，彻底改善失眠等症状，致力于提供给您上乘的健康睡眠保障。</p></TabPane>
             <TabPane tab="大事记" key="2"><h2>大事记</h2><p><img src={require('../../assets/aboutUs/dsj.jpg')} alt=""/></p></TabPane>
             <TabPane tab="企业文化" key="3"><h2>威尔斯利普企业文化</h2><p>品牌定位：<br/>中国亚磁热疗养生床垫第一品牌<br/>企业使命：<br/>推动健康事业持续增长、帮助中老年群体健康长寿、为中国的健康事业而努力奋斗！<br/>核心价值观：<br/>以科技为向导、以远红外磁疗为核心、做良心产品、做负责任企业！<br/>经营理念：<br/>幸福你我他、健康送到家！</p></TabPane>

@@ -25,7 +25,6 @@ class App extends React.Component<any, any> {
   }
 
   callback(key: any) {
-    console.log(key);
     this.setState({
       tabId: key
     });

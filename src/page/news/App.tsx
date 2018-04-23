@@ -7,37 +7,25 @@ import webAPI from '../../lib/webApi';
 const TabPane = Tabs.TabPane;
 const banner = require('../../assets/news/news-banner.jpg');
 
-// function callback(key: string) {
-//   console.log(key);
-// }
-
 class News extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {newsdata: [], tabId: 0, total: 0};
     this.callback = this.callback.bind(this);
   }
-  componentDidMount () {
-    this.newsRes();
-  }
   callback(key: string) {
-    console.log(this);
-    this.setState({
-      tabId: key
-    });
+    this.newsRes(key);
   }
 
-  async newsRes() {
+  async newsRes(key: any) {
     let parth = {
-      tabId: this.state.tabId
+      tabId: key
     };
     let res = await webAPI.enroll.news(parth);
-    console.log(res.data.data);
     this.setState({
       newsdata: res.data.data,
       total: res.data.data.length
     });
-    console.log(this.state);
   } 
   
   componentWillMount() {
@@ -47,14 +35,15 @@ class News extends React.Component<any, any> {
       this.setState({
         tabId: id
       });
+      this.newsRes(id);
+      return;
     }
+    this.newsRes(0);
   }
   render() {
     const con = this.state.newsdata;
     let newsList = con.map((el: any, index: number) => {
       var data = con[index];
-      // data = JSON.stringify(data);
-      // var path = {`/NewsCon/${data}`};
       var path = {
         pathname: '/newscon',
         state: data
@@ -77,11 +66,11 @@ class News extends React.Component<any, any> {
           </div>
           <div className="aboutusTab">
             <Tabs defaultActiveKey={this.state.tabId} onChange={this.callback}>
-              <TabPane tab="公司新闻" key="1">
+              <TabPane tab="公司新闻" key="0">
                 {newsList}
                 <Pagination defaultCurrent={1} total={this.state.total} />
               </TabPane>
-              <TabPane tab="健康睡眠" key="2">
+              <TabPane tab="健康睡眠" key="1">
                 {newsList}
                 <Pagination defaultCurrent={1} total={this.state.total} />
               </TabPane>

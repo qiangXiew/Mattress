@@ -2,9 +2,6 @@ import * as React from 'react';
 import { Tabs } from 'antd';
 import './funModule.less';
 const TabPane = Tabs.TabPane;
-function callback(key: any) {
-    console.log(key);
-}
 class FunModule extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
@@ -38,14 +35,13 @@ class FunModule extends React.Component<any, any> {
         const Id = this.props.id; // 功能、特点切换ID
         const tabId = this.props.tabId; // 床垫、按摩椅切换ID
         const funcId = this.props.funcId; // 各个功能特点ID
-        console.log(Id + '---' + funcId);
         let con = (Number(tabId) === 0 ? this.state.con1 : this.state.con2) ;
         let conList = (Number(Id) === 0 ? con.conList1 : con.conList2) ;
         let TabPaneList = conList.map((el: any, index: number) => {
             return <TabPane tab={conList[index].tabName} key={index}><h2 className="TabTitle">{conList[index].title}</h2>{conList[index].details}</TabPane>;
         });
         return (
-            <Tabs defaultActiveKey={funcId} onChange={callback}>
+            <Tabs defaultActiveKey={funcId}>
             {TabPaneList}
             </Tabs>
         );

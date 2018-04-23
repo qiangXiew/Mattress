@@ -48,8 +48,8 @@ class Footer extends React.Component<any, any> {
           </Col>
           <Col className={this.mouseover(2)} xs={24} sm={24} md={4} onMouseOver={() => {this.setState({tabId: 2}); }} onMouseLeave={this.mouseleave}>
             <Row><h1>新闻中心</h1><i>Product Center</i></Row>
-            <Row><a href="/news/1">公司新闻</a></Row>
-            <Row><a href="/news/2">健康提醒</a></Row>
+            <Row><a href="/news/0">公司新闻</a></Row>
+            <Row><a href="/news/1">健康提醒</a></Row>
           </Col>
           <Col className={this.mouseover(3)} xs={24} sm={24} md={4} onMouseOver={() => {this.setState({tabId: 3}); }} onMouseLeave={this.mouseleave}>
             <Row><h1>联系我们</h1><i>Contact us</i></Row>

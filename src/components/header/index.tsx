@@ -39,9 +39,9 @@ class Header extends React.Component<any, any> {
                             <Menu.Item><a href="/Product/0/0/0">亚磁热疗养生床垫</a></Menu.Item>
                             <Menu.Item><a href="/Product/1/0/0">3D气压全位按摩椅</a></Menu.Item>
                         </Menu.SubMenu>
-                        <Menu.SubMenu key="/news" title={<a href="/news/1">新闻中心</a>}>
-                            <Menu.Item><a href="/news/1">公司新闻</a></Menu.Item>
-                            <Menu.Item><a href="/news/2">健康睡眠</a></Menu.Item>
+                        <Menu.SubMenu key="/news" title={<a href="/news/0">新闻中心</a>}>
+                            <Menu.Item><a href="/news/0">公司新闻</a></Menu.Item>
+                            <Menu.Item><a href="/news/1">健康睡眠</a></Menu.Item>
                         </Menu.SubMenu>
                         <Menu.SubMenu key="/contactUs" title={<a href="/contactUs/1">联系我们</a>}>
                             <Menu.Item><a href="/contactUs/1">联系方式</a></Menu.Item>

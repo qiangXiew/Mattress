@@ -30,7 +30,7 @@ const BasicExample = () => (
 
             <Footer />
             <div id="backTop">
-                <span><Icon type="phone" /></span>
+                <span><Icon type="phone" /><p className="tel">免费咨询：4000-361-855</p></span>
                 {/* <span><Icon type="wechat" /></span>
                 <span><Icon type="qq" /></span>
                 <span><Icon type="weibo" /></span>
