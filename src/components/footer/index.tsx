@@ -23,10 +23,10 @@ class Footer extends React.Component<any, any> {
       <div id="footer">
         <div className="content">
           <Col md={8}>
-            <Col span={5}><img className="foodPadding" src={require('../../assets/logo.png')} /></Col>
+            <Col span={5}><img className="foodPadding" src={require('./../../assets/logo.png')} /></Col>
             <Col className="left txt" span={24}> 北京市朝阳区驼房营新华科技大厦14层 400-0361855</Col>
             <div>
-              <Col span={6}><img src={require('../../assets/DC.png')} alt="" /></Col>
+              <Col span={6}><img src={require('./../../assets/DC.png')} alt="" /></Col>
               <Col className="left wx_gz" span={8} offset={1}>
                 <p>接入微信公众号</p>
                 <p>随时关注最新消息</p>
@@ -48,8 +48,8 @@ class Footer extends React.Component<any, any> {
           </Col>
           <Col className={this.mouseover(2)} xs={24} sm={24} md={4} onMouseOver={() => {this.setState({tabId: 2}); }} onMouseLeave={this.mouseleave}>
             <Row><h1>新闻中心</h1><i>Product Center</i></Row>
-            <Row><a href="/news/1">公司新闻</a></Row>
-            <Row><a href="/news/2">健康提醒</a></Row>
+            <Row><a href="/news/0">公司新闻</a></Row>
+            <Row><a href="/news/1">健康提醒</a></Row>
           </Col>
           <Col className={this.mouseover(3)} xs={24} sm={24} md={4} onMouseOver={() => {this.setState({tabId: 3}); }} onMouseLeave={this.mouseleave}>
             <Row><h1>联系我们</h1><i>Contact us</i></Row>

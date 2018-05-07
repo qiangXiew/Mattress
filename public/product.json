@@ -2,10 +2,10 @@
     "data":{
         "bannerImgs": {
             "banner1": [
-                {"imgUrl": "../../assets/product/pro-cd-banner-1.jpg"}
+                {"imgUrl": "./../../assets/product/pro-cd-banner-1.jpg"}
             ],
             "banner2": [
-                {"imgUrl": "../../assets/product/pro-amy-banner-1.jpg"}
+                {"imgUrl": "./../../assets/product/pro-amy-banner-1.jpg"}
             ]
         }
     }

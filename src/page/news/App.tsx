@@ -1,14 +1,11 @@
 import * as React from 'react';
 import './news.less';
 import { Tabs , Pagination } from 'antd';
+import { Link } from 'react-router-dom';
 import * as moment from 'moment';
-import webAPI from '../../lib/webApi';
+import webAPI from './../../lib/webApi';
 const TabPane = Tabs.TabPane;
-const banner = require('../../assets/news/news-banner.jpg');
-
-// function callback(key: string) {
-//   console.log(key);
-// }
+const banner = require('./../../assets/news/news-banner.jpg');
 
 class News extends React.Component<any, any> {
   constructor(props: any) {
@@ -16,27 +13,19 @@ class News extends React.Component<any, any> {
     this.state = {newsdata: [], tabId: 0, total: 0};
     this.callback = this.callback.bind(this);
   }
-  componentDidMount () {
-    this.newsRes();
-  }
   callback(key: string) {
-    console.log(this);
-    this.setState({
-      tabId: key
-    });
+    this.newsRes(key);
   }
 
-  async newsRes() {
+  async newsRes(key: any) {
     let parth = {
-      tabId: this.state.tabId
+      tabId: key
     };
     let res = await webAPI.enroll.news(parth);
-    console.log(res.data.data);
     this.setState({
       newsdata: res.data.data,
       total: res.data.data.length
     });
-    console.log(this.state);
   } 
   
   componentWillMount() {
@@ -46,23 +35,28 @@ class News extends React.Component<any, any> {
       this.setState({
         tabId: id
       });
+      this.newsRes(id);
+      return;
     }
+    this.newsRes(0);
   }
   render() {
     const con = this.state.newsdata;
     let newsList = con.map((el: any, index: number) => {
-      var data = con[index].bewrite;
-      // data = JSON.stringify(data);
-      var path = `/NewsCon/${data}`;
+      var data = con[index];
+      var path = {
+        pathname: '/newscon',
+        state: data
+      };
       return (
-        <div className="news-list" key={index}>
-          <a href={path} className="news-list-img"><img src={con[index].imgUrl} alt=""/></a>
+        <Link to={path} className="news-list" key={index}>
+          <div className="news-list-img"><img src={con[index].imgUrl} alt=""/></div>
           <div className="news-list-txt">
             <h3>{con[index].title}</h3>
             <p>{con[index].bewrite}</p>
             <em>{moment(con[index].createTime).format('YYYY-MM-DD HH:mm:ss')}</em>
           </div>
-        </div>
+        </Link>
       );
     });
     return (
@@ -72,11 +66,11 @@ class News extends React.Component<any, any> {
           </div>
           <div className="aboutusTab">
             <Tabs defaultActiveKey={this.state.tabId} onChange={this.callback}>
-              <TabPane tab="公司新闻" key="1">
+              <TabPane tab="公司新闻" key="0">
                 {newsList}
                 <Pagination defaultCurrent={1} total={this.state.total} />
               </TabPane>
-              <TabPane tab="健康睡眠" key="2">
+              <TabPane tab="健康睡眠" key="1">
                 {newsList}
                 <Pagination defaultCurrent={1} total={this.state.total} />
               </TabPane>

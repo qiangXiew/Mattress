@@ -25,16 +25,16 @@ const BasicExample = () => (
             <Route path="/about/:id" component={About} />
             <Route path="/product/:id/:FPTId/:funcId" component={Product} />
             <Route path="/news/:id" component={News} />
-            <Route path="/newscon/:con" component={NewsCon} />
+            <Route path="/newscon" component={NewsCon} />
             <Route path="/contactUs/:id" component={ContactUs} />
 
             <Footer />
             <div id="backTop">
-                <span><Icon type="phone" /></span>
-                <span><Icon type="wechat" /></span>
+                <span><Icon type="phone" /><p className="tel">免费咨询：4000-361-855</p></span>
+                {/* <span><Icon type="wechat" /></span>
                 <span><Icon type="qq" /></span>
                 <span><Icon type="weibo" /></span>
-                <span><Icon type="message" /></span>
+                <span><Icon type="message" /></span> */}
                 <BackTop />
             </div>
         </div>
