@@ -7,7 +7,7 @@ class App extends React.Component<any, any> {
     super(props);
     this.state = {
       date: '我的标题',
-      tabFeatures: require('../../../../assets/index/index-pro-point-bg.jpg'), // 产品特点背景图
+      tabFeatures: require('./../../../../assets/index/index-pro-point-bg.jpg'), // 产品特点背景图
       tabFeaturesIndex: 0,
       tabFeaturesStatus: false
     };
@@ -16,9 +16,9 @@ class App extends React.Component<any, any> {
   }
   handleMouseOver(index: number) {
     if (this.state.tabFeaturesStatus === true && this.state.tabFeaturesIndex === index) {
-      return require('../../../../assets/index/index-pro-point-mo-' + (index + 1) + '.jpg');
+      return require('./../../../../assets/index/index-pro-point-mo-' + (index + 1) + '.jpg');
     }
-    return require('../../../../assets/index/index-pro-point-def-' + (index + 1) + '.jpg');
+    return require('./../../../../assets/index/index-pro-point-def-' + (index + 1) + '.jpg');
   }
   handleMouseLeave() {
     this.setState({

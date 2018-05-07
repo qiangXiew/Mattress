@@ -12,12 +12,10 @@ class WebApi {
     async _ApiRes(config: any, datas: any, header: any) {
         let { method, path } = config;
         let patch = { method, url: path };
-        patch = merge(patch, header, { data: datas });
-        console.log(patch, 'patch');
+        patch = merge(patch, header, { params: datas });
 
         let ress = await axios(patch)
             .then((res: any) => {
-                console.log(res, 'res');
                 return res;
             })
             .catch((err: any) => {
