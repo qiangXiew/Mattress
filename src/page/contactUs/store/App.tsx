@@ -30,7 +30,7 @@ class Store extends React.Component<any, any> {
                     </Map>
                 </div>
                 <div className="map-right">
-                    <p className="store-img"><img src={require('../../../assets/contactus/contactus-s.jpg')} alt=""/></p>
+                    <p className="store-img"><img src={require('./../../../assets/contactus/contactus-s.jpg')} alt=""/></p>
                     <ul>
                         <li onClick={this.toGo.bind(this, 0)}>店名:红舞联盟健康生活馆（北京店）<br />地址:北京店:北京市朝阳区驼房营南路新华科技大厦B做305室，红舞联盟健康生活馆。<br />联系人:刘程竹13311397807</li>
                         <li onClick={this.toGo.bind(this, 1)}>店名：红舞联盟健康生活馆（天津店）<br />地址：天津市河北区万柳村大街1946创意园红舞联盟健康生活馆<br />电话：王宇欣13311398167</li>

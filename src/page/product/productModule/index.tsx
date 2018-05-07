@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './productModule.less';
 import { Carousel } from 'antd';
-import FunModule from '../funModule/App';
+import FunModule from './../funModule/App';
 // import webApi from '../../../lib/webApi';
 
 class Products extends React.Component <any, any> {
@@ -13,10 +13,10 @@ class Products extends React.Component <any, any> {
     this.state = {
       bannerImgs: {
         banner1: [
-          {imgUrl: require('../../../assets/product/pro-cd-banner-1.jpg')}
+          {imgUrl: require('./../../../assets/product/pro-cd-banner-1.jpg')}
         ],
         banner2: [
-          {imgUrl: require('../../../assets/product/pro-amy-banner-1.jpg')}
+          {imgUrl: require('./../../../assets/product/pro-amy-banner-1.jpg')}
         ]
       },
       tabs: [

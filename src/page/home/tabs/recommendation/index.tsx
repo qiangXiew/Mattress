@@ -3,8 +3,8 @@ import { Icon } from 'antd';
 import './App.less';
 import { Carousel, Row, Col } from 'antd';
 const tabRecommendImgs = {
-  'img1' : require('../../../../assets/index/index-pro-rec-1.jpg'),
-  'img2' : require('../../../../assets/index/index-pro-rec-2.jpg')
+  'img1' : require('./../../../../assets/index/index-pro-rec-1.jpg'),
+  'img2' : require('./../../../../assets/index/index-pro-rec-2.jpg')
 };
 
 class App extends React.Component<any, any> {

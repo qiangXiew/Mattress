@@ -18,7 +18,7 @@ class Header extends React.Component<any, any> {
                         <div className="content">
                             <Col span={15}>
                                 <a href="http://www.hong5.com.cn" rel="nofollow">
-                                    <img src={require('../../assets/headerLogo.png')} />
+                                    <img src={require('./../../assets/headerLogo.png')} />
                                 </a>
                             </Col>
                             <Col className="mobile" span={6} offset={3}><Icon type="phone" />4000-361-855</Col>

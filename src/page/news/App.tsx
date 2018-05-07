@@ -3,9 +3,9 @@ import './news.less';
 import { Tabs , Pagination } from 'antd';
 import { Link } from 'react-router-dom';
 import * as moment from 'moment';
-import webAPI from '../../lib/webApi';
+import webAPI from './../../lib/webApi';
 const TabPane = Tabs.TabPane;
-const banner = require('../../assets/news/news-banner.jpg');
+const banner = require('./../../assets/news/news-banner.jpg');
 
 class News extends React.Component<any, any> {
   constructor(props: any) {

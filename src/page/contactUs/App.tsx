@@ -4,7 +4,7 @@ import './App.less';
 // import City from './city/App';
 import Store from './store/App';
 const TabPane = Tabs.TabPane;
-const banner = require('../../assets/contactus/contact-banner.jpg');
+const banner = require('./../../assets/contactus/contact-banner.jpg');
 
 class App extends React.Component<any, any> {
   constructor(props: any) {

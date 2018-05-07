@@ -3,10 +3,10 @@ import * as React from 'react';
 import './App.less';
 import { Carousel, Row, Col } from 'antd';
 const tabFunctionImgs = {
-  'img1' : require('../../../../assets/index/index-pro-fun-1.png'),
-  'img2' : require('../../../../assets/index/index-pro-fun-2.png'),
-  'img3' : require('../../../../assets/index/index-pro-fun-3.png'),
-  'img4' : require('../../../../assets/index/index-pro-fun-4.png')
+  'img1' : require('./../../../../assets/index/index-pro-fun-1.png'),
+  'img2' : require('./../../../../assets/index/index-pro-fun-2.png'),
+  'img3' : require('./../../../../assets/index/index-pro-fun-3.png'),
+  'img4' : require('./../../../../assets/index/index-pro-fun-4.png')
 };
 
 class App extends React.Component<any, any> {

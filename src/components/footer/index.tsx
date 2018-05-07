@@ -23,10 +23,10 @@ class Footer extends React.Component<any, any> {
       <div id="footer">
         <div className="content">
           <Col md={8}>
-            <Col span={5}><img className="foodPadding" src={require('../../assets/logo.png')} /></Col>
+            <Col span={5}><img className="foodPadding" src={require('./../../assets/logo.png')} /></Col>
             <Col className="left txt" span={24}> 北京市朝阳区驼房营新华科技大厦14层 400-0361855</Col>
             <div>
-              <Col span={6}><img src={require('../../assets/DC.png')} alt="" /></Col>
+              <Col span={6}><img src={require('./../../assets/DC.png')} alt="" /></Col>
               <Col className="left wx_gz" span={8} offset={1}>
                 <p>接入微信公众号</p>
                 <p>随时关注最新消息</p>

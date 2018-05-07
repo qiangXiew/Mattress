@@ -3,7 +3,7 @@ import './App.less';
 import { Col, Row, Tabs } from 'antd';
 import * as moment from 'moment';
 import { Link } from 'react-router-dom';
-import WebApi from '../../../../lib/webApi';
+import WebApi from './../../../../lib/webApi';
 const TabPane = Tabs.TabPane;
 
 class App extends React.Component<any, any> {
