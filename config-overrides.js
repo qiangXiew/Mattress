@@ -22,7 +22,15 @@ module.exports = function override(config, env) {
     };
 
     config = rewireLess.withLoaderOptions({
-        modifyVars: { "@primary-color": "#C30D23" },
+        modifyVars: { "@primary-color": "#C30D23"
+
+/*
+  Notes:
+  - Consumed by react-app-rewired so CRA config can be customized without ejecting.
+  - ts-import-plugin rewrites antd imports to the es build and loads styles on demand.
+  - rewireLess injects the antd theme override (@primary-color) into LESS.
+*/
+ },
     })(config, env);
 
     return config;
